@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="description" content="Therapist Booking Website">
+  <meta name="author" content="yourname.com">
+
+  <title>Therapist Booking - About Us</title>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.ico" />
+  <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/plugins/icofont/icofont.min.css">
+  <link rel="stylesheet" href="/static/plugins/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="/static/plugins/slick-carousel/slick/slick-theme.css">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <style>
+	/* Adjust the spacing between navigation items */
+.navbar-nav .nav-item {
+    margin-left: 15px; /* Increases space between the nav items */
+}
+
+/* Adjust padding inside the navigation links */
+.navbar-nav .nav-link {
+    padding: 10px 15px; /* Adds padding to make links more spacious */
+    font-size: 16px; /* Increase font size for better readability */
+}
+
+/* Adjust navbar logo size for better proportions */
+.navbar-brand img {
+    max-height: 60px; /* Adjusts the height of the logo */
+}
+
+/* For better alignment in smaller screens */
+@media (max-width: 992px) {
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
+/* Hover effect for navigation links */
+.navbar-nav .nav-link {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #223a66; /* Default link color */
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #e12454; /* Background color on hover */
+    color: #fff; /* Text color on hover */
+    border-radius: 5px; /* Optional: rounding the corners */
+}
+
+  </style>
+
+</head>
+
+<body id="top">
+
+<header>
+	<div class="header-top-bar">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6">
+					<ul class="top-bar-info list-inline-item pl-0 mb-0">
+						<li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>healthyhub@gmail.com</a></li>
+						<li class="list-inline-item"><i class="icofont-location-pin mr-2"></i>Surathkal, Mangalore, PIN-575014</li>
+					</ul>
+				</div>
+				<div class="col-lg-6">
+					<div class="text-lg-right top-right-bar mt-2 mt-lg-0">
+						<a href="tel:+23-345-67890" >
+							<span>Call Now : </span>
+							<span class="h4">+91 9448700508</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-expand-lg navigation" id="navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">
+				<img src="images/logo.png" alt="" class="img-fluid">
+			</a>
+	
+			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="icofont-navigation-menu"></span>
+			</button>
+	
+			<div class="collapse navbar-collapse" id="navbarmain">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<!-- Dynamically change Home based on login status -->
+						{% if session.get('username') %}
+							<a href="{{ url_for('dashboard') }}" class="nav-link">Home</a>
+						{% else %}
+							<a href="{{ url_for('index') }}" class="nav-link">Home</a>
+						{% endif %}
+					</li>
+					<li class="nav-item"><a href="{{ url_for('service') }}" class="nav-link">Services</a></li>
+					<li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
+					<li class="nav-item"><a href="{{ url_for('profile') }}" class="nav-link">Profile</a></li>
+					<li class="nav-item"><a href="{{ url_for('logout') }}" class="nav-link">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	
+</header>
+	
+
+<section class="page-title bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span class="text-white">About Us</span>
+          <h1 class="text-capitalize mb-5 text-lg">About Us</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section about-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4">
+				<h2 class="title-color">Your Well-being is Our Priority</h2>
+			</div>
+			<div class="col-lg-8">
+				<p>At Therapist Booking, we believe in providing personalized care tailored to your unique needs. Our dedicated therapists are committed to helping you achieve optimal health and wellness, ensuring a positive experience every step of the way.</p>
+				<img src="images/about/sign.png" alt="" class="img-fluid">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="fetaure-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<div class="about-block-item mb-5 mb-lg-0">
+					<img src="/static/images/about/about-1.jpg" alt="" class="img-fluid w-100">
+					<h4 class="mt-3">Therapy for Everyone</h4>
+					<p>We offer various therapy options to cater to all ages and lifestyles.</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="about-block-item mb-5 mb-lg-0">
+					<img src="/static/images/about/about-2.jpg" alt="" class="img-fluid w-100">
+					<h4 class="mt-3">Expert Therapists</h4>
+					<p>Our team consists of licensed and experienced therapists dedicated to your care.</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="about-block-item mb-5 mb-lg-0">
+					<img src="/static/images/about/about-3.jpg" alt="" class="img-fluid w-100">
+					<h4 class="mt-3">Holistic Approaches</h4>
+					<p>We utilize a range of holistic methods to promote healing and well-being.</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="about-block-item">
+					<img src="/static/images/about/about-4.jpg" alt="" class="img-fluid w-100">
+					<h4 class="mt-3">Compassionate Care</h4>
+					<p>Our compassionate approach ensures you feel valued and understood.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section team">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-6">
+				<div class="section-title text-center">
+					<h2 class="mb-4">Meet Our Therapists</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>Our team of skilled therapists is here to support your journey towards wellness. Each therapist brings a unique set of skills and experiences to ensure you receive the best care possible.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="team-block mb-5 mb-lg-0">
+					<img src="/static/images/team/3.jpg" alt="" class="img-fluid w-100">
+					<div class="content">
+						<h4 class="mt-4 mb-0"><a href="therapist-single.html">Emily Johnson</a></h4>
+						<p>Licensed Massage Therapist</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="team-block mb-5 mb-lg-0">
+					<img src="/static/images/team/2.jpg" alt="" class="img-fluid w-100">
+					<div class="content">
+						<h4 class="mt-4 mb-0"><a href="therapist-single.html">Michael Smith</a></h4>
+						<p>Psychotherapist</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="team-block mb-5 mb-lg-0">
+					<img src="/static/images/team/1.jpg" alt="" class="img-fluid w-100">
+					<div class="content">
+						<h4 class="mt-4 mb-0"><a href="therapist-single.html">Sara Lee</a></h4>
+						<p>Physical Therapist</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="team-block">
+					<img src="/static/images/team/4.jpg" alt="" class="img-fluid w-100">
+					<div class="content">
+						<h4 class="mt-4 mb-0"><a href="therapist-single.html">David Brown</a></h4>
+						<p>Counselor</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- footer Start -->
+<footer class="footer section gray-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 mr-auto col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<div class="logo mb-4">
+						<img src="/static/images/logo.png" alt="" class="img-fluid">
+					</div>
+					<p>Experience personalized care with our dedicated therapists, committed to guiding you through your journey towards well-being and self-discovery.</p>
+
+					<ul class="list-inline footer-socials mt-4">
+						<li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i class="icofont-linkedin"></i></a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Department</h4>
+					<div class="divider mb-4"></div>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#">Surgery </a></li>
+						<li><a href="#">Wome's Health</a></li>
+						<li><a href="#">Radiology</a></li>
+						<li><a href="#">Cardioc</a></li>
+						<li><a href="#">Medicine</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-2 col-md-6 col-sm-6">
+				<div class="widget mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Support</h4>
+					<div class="divider mb-4"></div>
+
+					<ul class="list-unstyled footer-menu lh-35">
+						<li><a href="#">Terms & Conditions</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Company Support </a></li>
+						<li><a href="#">FAQuestions</a></li>
+						<li><a href="#">Company Licence</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-md-6 col-sm-6">
+				<div class="widget widget-contact mb-5 mb-lg-0">
+					<h4 class="text-capitalize mb-3">Get in Touch</h4>
+					<div class="divider mb-4"></div>
+
+					<div class="footer-contact-block mb-4">
+						<div class="icon d-flex align-items-center">
+							<i class="icofont-email mr-3"></i>
+							<span class="h6 mb-0">Support Available for 24/7</span>
+						</div>
+						<h4 class="mt-2"><a href="tel:+23-345-67890">healthyhub@gmail.com</a></h4>
+					</div>
+
+					<div class="footer-contact-block">
+						<div class="icon d-flex align-items-center">
+							<i class="icofont-support mr-3"></i>
+							<span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+						</div>
+						<h4 class="mt-2"><a href="tel:+23-345-67890">+91 9448700508</a></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+</footer>
+   
+
+    <!-- 
+    Essential Scripts
+    =====================================-->
+
+    
+    <!-- Main jQuery -->
+    <script src="plugins/jquery/jquery.js"></script>
+    <!-- Bootstrap 4.3.2 -->
+    <script src="plugins/bootstrap/js/popper.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="plugins/counterup/jquery.easing.js"></script>
+    <!-- Slick Slider -->
+    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+    <!-- Counterup -->
+    <script src="plugins/counterup/jquery.waypoints.min.js"></script>
+    
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="plugins/counterup/jquery.counterup.min.js"></script>
+    <!-- Google Map -->
+    <script src="plugins/google-map/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>    
+    
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+
+
+  </body>
+  </html>

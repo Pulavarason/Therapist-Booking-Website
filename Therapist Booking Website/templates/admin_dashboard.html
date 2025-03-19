@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-image: url('/static/images/bg/homebg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+            color: #6F8BA4; /* Consistent color scheme */
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #223a66; /* Match the dark blue color */
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .nav-logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-icons {
+            display: flex;
+        }
+        
+        .icon {
+            position: relative;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .icon img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1); /* For white icons on dark background */
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 12px;
+        }
+
+        .content {
+            padding: 120px 20px 20px; /* Extra top padding for the navbar */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.8rem; /* Make the h1 bigger */
+            font-weight: 700;
+            color: #223a66; /* Match the blue color */
+            margin-bottom: 40px;
+        }
+        
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for consistency */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: #223a66; /* Blue title color */
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #6F8BA4;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .action-button {
+            background-color: #223a66;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #e12454; /* Hover effect with red background */
+            box-shadow: 0 0 10px rgba(255, 123, 123, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-logo">Admin Panel</div>
+        <div class="nav-icons">
+            <div class="icon" title="Profile">
+                <img src="profile-icon.png" alt="Profile">
+            </div>
+            <div class="icon" title="Notifications">
+                <img src="bell-icon.png" alt="Notifications">
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="icon" title="Settings">
+                <img src="settings-icon.png" alt="Settings">
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to the Admin Dashboard</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>Users</h2>
+                <p>Manage your users here.</p>
+                <button class="action-button">View Users</button>
+            </div>
+            <div class="card">
+                <h2>Appointments</h2>
+                <p>View total appointments.</p>
+                <button class="action-button">View Appointments</button>
+            </div>
+            <div class="card">
+                <h2>Settings</h2>
+                <p>Configure your application settings.</p>
+                <button class="action-button">Go to Settings</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

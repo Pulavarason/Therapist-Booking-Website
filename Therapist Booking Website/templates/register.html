@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register - Heal Hub</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Exo:500,600,700|Roboto&display=swap" rel="stylesheet">
+
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Icon Font Css -->
+    <link rel="stylesheet" href="/static/plugins/icofont/icofont.min.css">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('/static/images/about/login.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #6F8BA4;
+            font-weight: 400;
+            line-height: 1.6;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        
+        .ftco-section {
+            width: 100%;
+            padding: 0 15px;
+        }
+        
+        .heading-section {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Exo', sans-serif;
+            color: #223a66;
+            margin-bottom: 5px; /* Add space below the heading */
+        }
+        
+        /* Form Container */
+        .login-wrap {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .form-control {
+            background: #f0f0f0;
+            border: 1px solid #6F8BA4;
+            border-radius: 5px;
+            height: 45px;
+            padding: 0 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            background: #e0e0e0;
+            outline: none;
+            border: 1px solid #223a66;
+        }
+        
+        .btn-primary {
+            background: #223a66;
+            color: #fff;
+            border-radius: 5px;
+            height: 45px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Exo', sans-serif;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+        
+        .btn-primary:hover {
+            background: #e12454;
+        }
+        
+        .register-text a {
+            color: #e12454;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .register-text a:hover {
+            color: #223a66;
+            text-decoration: underline;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .heading-section {
+                font-size: 1.8rem;
+            }
+        
+            .login-wrap {
+                padding: 15px;
+            }
+        
+            .form-control, .btn-primary {
+                height: 40px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .ftco-section {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        
+        .flash-message {
+            color: #e12454; /* Color for flash messages */
+            margin-bottom: 15px; /* Space below the message */
+        }
+        
+        .login-wrap {
+            background: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 450px;
+            max-width: 100%;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-4">
+                    <h1 class="heading-section">Register</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-4" style="width: 500px;">
+                        <form action="/register" method="POST" class="signin-form">
+                            <div style="padding: 10px;">
+                                <input type="text" name="username" class="form-control" placeholder="Username" required>
+                            </div>
+                            <div style="padding: 10px;">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required>
+                            </div>
+                            <div style="padding: 10px;">
+                                <input type="tel" name="phone" class="form-control" placeholder="Phone number" required>
+                            </div>
+                            <div style="padding: 10px;">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                            </div>
+                            <div style="padding: 10px;">
+                                <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
+                            </div>
+                            <div style="padding: 10px;">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
+                            </div>
+                            
+                        </form>
+                        <div class="register-text mt-3">
+                            <p>Already have an account? <a href="/login">Login here</a></p>
+                        </div>
+                           <!-- Flash message goes here -->
+                           {% with messages = get_flashed_messages() %}
+                           {% if messages %}
+                               <p class="flash-message">{{ messages[0] }}</p>
+                           {% endif %}
+                       {% endwith %}
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
